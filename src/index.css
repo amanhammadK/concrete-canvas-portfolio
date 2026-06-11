@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Technical Mono / Code Brutalism Palette */
+    --background: 220 16% 7%; /* Deep graphite/slate #0f1115 */
+    --foreground: 0 0% 100%;
+    /* Pure White */
+
+    --card: 220 16% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 2%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 170 70% 83%; /* Pastel Mint #b2f5ea */
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    /* Pure Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 15%;
+    --input: 220 16% 15%;
+    --ring: 173 100% 48%;
+
+    --radius: 0rem;
+    /* Strictly no rounded corners in Brutalism */
+
+    /* Accent — stark white only */
+    --accent-glow: 170 70% 83%;
+
+    /* Data Visualization tokens */
+    --data-node: 220 16% 20%;
+    --data-link: 220 16% 40%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    cursor: crosshair;
+    /* Technical cursor */
+  }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-mono {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+  }
+
+  .text-mono-bold {
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  /* CRT Scanlines and Film Grain simulation (fallback classes if postprocessing isn't active on a div) */
+  .scanlines {
+    background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.1));
+    background-size: 100% 4px;
+    pointer-events: none;
+  }
+
+  .glass-panel {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Infinite marquee for Tech Stack */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .mix-difference {
+    mix-blend-mode: difference;
+  }
+
+  .mix-exclusion {
+    mix-blend-mode: exclusion;
+  }
+
+  /* Custom typography text-stroke utilities for brutalist look */
+  .outline-text {
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+  }
+
+  .outline-text-white {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    color: transparent;
+  }
+}
+
+/* Hide Spline watermark */
+[data-logo="spline"],
+a[href*="spline.design"],
+a[href*="spline.design"] img,
+canvas+a,
+canvas~a,
+canvas~div>a,
+#spline-watermark,
+[class*="watermark"],
+[class*="logo-"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}

@@ -1,0 +1,5 @@
+/* Reset — all styles handled via Tailwind */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
