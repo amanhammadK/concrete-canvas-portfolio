@@ -52,19 +52,19 @@ const fragmentShader = `
     vec3 starsColor = vec3(0.0);
     
     // Layer 1: Dense, tiny distant cosmic dust (slow twinkle)
-    float s1 = hash(swirledP * 250.0);
-    float int1 = smoothstep(0.990, 1.0, s1) * (0.6 + 0.4 * sin(uTime * 1.5 + s1 * 100.0));
-    starsColor += vec3(int1) * 0.5;
+    float s1 = hash(swirledP * 800.0);
+    float int1 = smoothstep(0.985, 1.0, s1) * (0.6 + 0.4 * sin(uTime * 1.5 + s1 * 100.0));
+    starsColor += vec3(int1) * 0.6;
 
     // Layer 2: Medium sized, colorful, pulsing stars
-    float s2 = hash(swirledP * 120.0 + 10.0);
-    float int2 = smoothstep(0.994, 1.0, s2) * (0.4 + 0.6 * sin(uTime * 3.0 + s2 * 50.0));
+    float s2 = hash(swirledP * 400.0 + 10.0);
+    float int2 = smoothstep(0.990, 1.0, s2) * (0.4 + 0.6 * sin(uTime * 3.0 + s2 * 50.0));
     vec3 color2 = mix(vec3(0.3, 0.7, 1.0), vec3(0.8, 0.6, 1.0), hash(swirledP * 2.0)); // Blue to subtle purple
-    starsColor += color2 * int2 * 0.9;
+    starsColor += color2 * int2 * 1.0;
 
     // Layer 3: Large, rare, bright teal anomaly stars with strong glow
-    float s3 = hash(swirledP * 60.0 + 20.0);
-    float int3 = smoothstep(0.997, 1.0, s3) * (0.3 + 0.7 * sin(uTime * 5.0 + s3 * 20.0));
+    float s3 = hash(swirledP * 150.0 + 20.0);
+    float int3 = smoothstep(0.995, 1.0, s3) * (0.3 + 0.7 * sin(uTime * 5.0 + s3 * 20.0));
     vec3 color3 = vec3(0.6, 1.0, 0.9); // Bright cyan/teal
     starsColor += color3 * int3 * 1.5;
 
@@ -136,13 +136,13 @@ export default function BlackHoleScreen() {
         <ambientLight intensity={0.5} />
         <ShaderPlane />
         <Stars 
-          radius={50} 
-          depth={50} 
-          count={8000} 
-          factor={4} 
+          radius={100} 
+          depth={100} 
+          count={15000} 
+          factor={2} 
           saturation={0.9} 
           fade 
-          speed={1.2} 
+          speed={1.0} 
         />
       </Canvas>
     </div>
