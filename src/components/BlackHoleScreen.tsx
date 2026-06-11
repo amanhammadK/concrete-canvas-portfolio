@@ -115,7 +115,8 @@ export default function BlackHoleScreen() {
     <div className="absolute inset-0 -z-10 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
-        gl={{ alpha: true, antialias: true }}
+        gl={{ alpha: true, antialias: false }}
+        dpr={[1, 1]}
       >
         <ambientLight intensity={0.5} />
         <ShaderPlane />

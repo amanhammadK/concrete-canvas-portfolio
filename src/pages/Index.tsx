@@ -183,7 +183,8 @@ export default function Index() {
     {
       title: "N×M",
       system: "A digital marketplace tailored for autonomous AI agents, with a multi-tier FastAPI/PostgreSQL backend and Next.js frontend.",
-      impact: "Engineered rigorous custom trust mechanics to validate agent capabilities and secure transactions for highly reliable data serving."
+      impact: "Engineered rigorous custom trust mechanics to validate agent capabilities and secure transactions for highly reliable data serving.",
+      link: "https://nxm-nine.vercel.app/"
     },
     {
       title: "FinanceGPT",
@@ -195,11 +196,13 @@ export default function Index() {
       title: "BlurBox",
       system: "An intelligent email triage platform that analyzes inbound communication tone and provides emotional-regulation guardrails.",
       impact: "Automatically intercepts aggressive messages and drafts de-escalating, strategic responses to reduce professional friction.",
+      link: "https://blurbox.vercel.app/"
     },
     {
       title: "Car Marketplace",
       system: "A digital showroom ecosystem utilizing AI for advanced vehicle search, recommendation engines, and user-intent matching.",
       impact: "Structured the backend infrastructure to handle complex inventory databases while ensuring rapid, reliable data serving.",
+      link: "https://car-marketplace-eosin.vercel.app/"
     },
     {
       title: "Burn-My-Portfolio",
@@ -228,12 +231,12 @@ export default function Index() {
         {/* ── GLOBAL 3D CANVAS (Optimized Fixed Layer) ── */}
         <div className="fixed inset-0 z-0 opacity-60 pointer-events-none">
           <Suspense fallback={null}>
-            <Canvas camera={{ position: [0, 0, 15], fov: 60 }} dpr={[1, 1.5]}>
+            <Canvas camera={{ position: [0, 0, 15], fov: 60 }} dpr={[1, 1]}>
               <color attach="background" args={['#030303']} />
               <ambientLight intensity={0.5} />
-              <CinematicNodes count={2000} />
+              <CinematicNodes count={400} />
               <EffectComposer>
-                <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={300} intensity={0.8} />
+                <Bloom luminanceThreshold={0.4} luminanceSmoothing={0.9} height={200} intensity={0.5} />
               </EffectComposer>
             </Canvas>
           </Suspense>
