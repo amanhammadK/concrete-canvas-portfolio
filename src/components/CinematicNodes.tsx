@@ -44,16 +44,17 @@ export default function CinematicNodes({ count = 5000 }) {
     const vel = new Float32Array(count * 3);
     const color = new THREE.Color();
     
-    // Theme colors
-    const baseColor = new THREE.Color('#b2f5ea');
-    const accentColor = new THREE.Color('#48929A');
-    const darkColor = new THREE.Color('#ffffff');
+    // Theme colors for massive personality
+    const baseColor = new THREE.Color('#b2f5ea'); // Teal
+    const accentColor = new THREE.Color('#9f7aea'); // Purple
+    const darkColor = new THREE.Color('#3182ce'); // Deep Blue
+    const hotColor = new THREE.Color('#ffffff'); // Hot White
 
     for (let i = 0; i < count; i++) {
-      // Cylindrical distribution for a "tunnel" or "vortex" look
-      const radius = 2 + Math.random() * 15;
+      // Spherical-cylindrical hybrid distribution for a lush galaxy feel
+      const radius = Math.random() * 25 + (Math.random() > 0.8 ? Math.random() * 15 : 0);
       const theta = Math.random() * 2 * Math.PI;
-      const y = (Math.random() - 0.5) * 40;
+      const y = (Math.random() - 0.5) * 50;
 
       const px = radius * Math.cos(theta);
       const py = y;
@@ -71,14 +72,20 @@ export default function CinematicNodes({ count = 5000 }) {
       vel[i * 3 + 1] = 0;
       vel[i * 3 + 2] = 0;
 
-      // Mix colors based on position
-      const mixedColor = color.copy(baseColor).lerp(
-        Math.random() > 0.5 ? accentColor : darkColor, 
-        Math.random()
+      // Rich color mixing based on random assignment
+      const rand = Math.random();
+      let selectedColor = baseColor;
+      if (rand > 0.8) selectedColor = hotColor;
+      else if (rand > 0.5) selectedColor = accentColor;
+      else if (rand > 0.3) selectedColor = darkColor;
+
+      const mixedColor = color.copy(selectedColor).lerp(
+        Math.random() > 0.5 ? baseColor : hotColor, 
+        Math.random() * 0.4
       );
       
-      // Make particles brighter
-      mixedColor.multiplyScalar(0.8 + Math.random() * 0.8);
+      // Make core particles intensely bright, others subtle
+      mixedColor.multiplyScalar(0.5 + Math.random() * 1.5);
 
       col[i * 3] = mixedColor.r;
       col[i * 3 + 1] = mixedColor.g;
@@ -169,7 +176,7 @@ export default function CinematicNodes({ count = 5000 }) {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.18} // slightly larger for visibility
+        size={0.12} // smaller size for sharper high-density look
         vertexColors
         transparent
         opacity={0.9} // increased opacity to make it brighter

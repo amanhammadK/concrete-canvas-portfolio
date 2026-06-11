@@ -233,7 +233,7 @@ export default function Index() {
             <Canvas camera={{ position: [0, 0, 15], fov: 60 }} dpr={[1, 1]}>
               <color attach="background" args={['#030303']} />
               <ambientLight intensity={0.5} />
-              <CinematicNodes count={400} />
+              <CinematicNodes count={2500} />
               <EffectComposer>
                 <Bloom luminanceThreshold={0.4} luminanceSmoothing={0.9} height={200} intensity={0.5} />
               </EffectComposer>
