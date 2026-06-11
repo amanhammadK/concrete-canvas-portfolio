@@ -184,7 +184,7 @@ export default function Index() {
       title: "N×M",
       system: "A digital marketplace tailored for autonomous AI agents, with a multi-tier FastAPI/PostgreSQL backend and Next.js frontend.",
       impact: "Engineered rigorous custom trust mechanics to validate agent capabilities and secure transactions for highly reliable data serving.",
-      link: "https://nxm-nine.vercel.app/"
+      link: "https://nx-m.vercel.app/"
     },
     {
       title: "FinanceGPT",
@@ -196,13 +196,11 @@ export default function Index() {
       title: "BlurBox",
       system: "An intelligent email triage platform that analyzes inbound communication tone and provides emotional-regulation guardrails.",
       impact: "Automatically intercepts aggressive messages and drafts de-escalating, strategic responses to reduce professional friction.",
-      link: "https://blurbox.vercel.app/"
     },
     {
       title: "Car Marketplace",
       system: "A digital showroom ecosystem utilizing AI for advanced vehicle search, recommendation engines, and user-intent matching.",
       impact: "Structured the backend infrastructure to handle complex inventory databases while ensuring rapid, reliable data serving.",
-      link: "https://car-marketplace-eosin.vercel.app/"
     },
     {
       title: "Burn-My-Portfolio",
