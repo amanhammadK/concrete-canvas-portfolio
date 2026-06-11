@@ -48,14 +48,29 @@ const fragmentShader = `
       baseColor = texture2D(uTex, finalUv) * 0.7;
     }
 
-    // --- Procedural Swirling Stars ---
-    // Use the swirled coordinates to generate stars so they orbit the black hole!
-    float starVal = hash(swirledP * 150.0); // dense star field
-    // Only keep brightest stars and make them twinkle based on time
-    float starIntensity = smoothstep(0.985, 1.0, starVal) * (0.5 + 0.5 * sin(uTime * 3.0 + starVal * 100.0));
+    // --- Procedural Swirling Stars (Multi-Layered Personality) ---
+    vec3 starsColor = vec3(0.0);
+    
+    // Layer 1: Dense, tiny distant cosmic dust (slow twinkle)
+    float s1 = hash(swirledP * 250.0);
+    float int1 = smoothstep(0.990, 1.0, s1) * (0.6 + 0.4 * sin(uTime * 1.5 + s1 * 100.0));
+    starsColor += vec3(int1) * 0.5;
+
+    // Layer 2: Medium sized, colorful, pulsing stars
+    float s2 = hash(swirledP * 120.0 + 10.0);
+    float int2 = smoothstep(0.994, 1.0, s2) * (0.4 + 0.6 * sin(uTime * 3.0 + s2 * 50.0));
+    vec3 color2 = mix(vec3(0.3, 0.7, 1.0), vec3(0.8, 0.6, 1.0), hash(swirledP * 2.0)); // Blue to subtle purple
+    starsColor += color2 * int2 * 0.9;
+
+    // Layer 3: Large, rare, bright teal anomaly stars with strong glow
+    float s3 = hash(swirledP * 60.0 + 20.0);
+    float int3 = smoothstep(0.997, 1.0, s3) * (0.3 + 0.7 * sin(uTime * 5.0 + s3 * 20.0));
+    vec3 color3 = vec3(0.6, 1.0, 0.9); // Bright cyan/teal
+    starsColor += color3 * int3 * 1.5;
+
     // Add stars only outside the absolute event horizon
     if (dist > 0.08) {
-      baseColor.rgb += vec3(starIntensity) * 0.8;
+      baseColor.rgb += starsColor * 0.9;
     }
 
     // --- Cinematic Glow & Shadow (Vignette) ---
@@ -123,11 +138,11 @@ export default function BlackHoleScreen() {
         <Stars 
           radius={50} 
           depth={50} 
-          count={3000} 
-          factor={2} 
-          saturation={0.5} 
+          count={8000} 
+          factor={4} 
+          saturation={0.9} 
           fade 
-          speed={0.5} 
+          speed={1.2} 
         />
       </Canvas>
     </div>
