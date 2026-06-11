@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProjectImmersiveModalProps {
@@ -13,6 +13,14 @@ interface ProjectImmersiveModalProps {
 }
 
 export default function ProjectImmersiveModal({ isOpen, onClose, project }: ProjectImmersiveModalProps) {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIframeLoaded(false);
+    }
+  }, [isOpen, project]);
+
   if (!project) return null;
 
   return (
@@ -93,11 +101,35 @@ export default function ProjectImmersiveModal({ isOpen, onClose, project }: Proj
                     </div>
                   </div>
 
-                  {/* Iframe Wrapper */}
+                  {/* Iframe & Loading Wrapper */}
                   <div className="flex-grow relative bg-black">
+                    
+                    {/* Brutalist Loading Screen */}
+                    <AnimatePresence>
+                      {!iframeLoaded && (
+                        <motion.div 
+                          initial={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.5 }}
+                          className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#050505]"
+                        >
+                          <div className="flex flex-col items-center gap-4">
+                            <div className="w-16 h-16 border-2 border-[#b2f5ea]/20 border-t-[#b2f5ea] rounded-full animate-spin" />
+                            <div className="text-[#b2f5ea] font-mono text-xs tracking-[0.3em] uppercase animate-pulse">
+                              Booting Simulator...
+                            </div>
+                            <div className="text-white/30 font-mono text-[10px] tracking-widest uppercase">
+                              Establishing Secure Connection
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
                     <iframe 
                       src={project.link} 
-                      className="absolute inset-0 w-full h-full border-none opacity-90 hover:opacity-100 transition-opacity duration-500"
+                      onLoad={() => setIframeLoaded(true)}
+                      className={`absolute inset-0 w-full h-full border-none transition-opacity duration-1000 ${iframeLoaded ? 'opacity-90 hover:opacity-100' : 'opacity-0'}`}
                       title={`${project.title} Live Simulator`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
