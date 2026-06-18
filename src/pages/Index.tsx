@@ -190,7 +190,7 @@ export default function Index() {
       title: "FinanceGPT",
       system: "A full-stack conversational trading platform orchestrating multiple advanced AI models for deep technical and sentiment analysis.",
       impact: "Architected a resilient backend gateway to manage concurrent LLM requests and aggregate real-time market feeds.",
-      link: "https://financegpt-nu.vercel.app"
+      link: "https://financegptwebsite.vercel.app"
     },
     {
       title: "BlurBox",
