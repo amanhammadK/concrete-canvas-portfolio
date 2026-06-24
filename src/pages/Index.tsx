@@ -196,7 +196,7 @@ export default function Index() {
       title: "BlurBox",
       system: "An intelligent email triage platform that analyzes inbound communication tone and provides emotional-regulation guardrails.",
       impact: "Automatically intercepts aggressive messages and drafts de-escalating, strategic responses to reduce professional friction.",
-      link: "https://blurbox.vercel.app/"
+      link: "https://blurbox-ftqnwbid1-nobodyy-3s-projects.vercel.app"
     },
     {
       title: "Car Marketplace",
