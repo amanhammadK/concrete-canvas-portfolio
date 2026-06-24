@@ -196,31 +196,31 @@ export default function Index() {
   const COMMERCIAL_PROJECTS = [
     {
       title: "N×M",
-      system: "A digital marketplace tailored for autonomous AI agents, with a multi-tier FastAPI/PostgreSQL backend and Next.js frontend.",
-      impact: "Engineered rigorous custom trust mechanics to validate agent capabilities and secure transactions for highly reliable data serving.",
+      system: "A digital marketplace built for autonomous AI agents to interact and trade. I designed the multi-tier backend and user interface from scratch.",
+      impact: "Built custom trust mechanisms to securely validate agent capabilities and ensure safe transactions across the platform.",
       link: "https://nx-m.vercel.app/"
     },
     {
       title: "FinanceGPT",
-      system: "A full-stack conversational trading platform orchestrating multiple advanced AI models for deep technical and sentiment analysis.",
-      impact: "Architected a resilient backend gateway to manage concurrent LLM requests and aggregate real-time market feeds.",
+      system: "A conversational financial platform that orchestrates multiple AI models to perform real-time market and sentiment analysis.",
+      impact: "Built a resilient backend capable of handling heavy, concurrent AI requests while pulling in live market data without latency.",
       link: "https://financegptwebsite.vercel.app"
     },
     {
       title: "BlurBox",
-      system: "An intelligent email triage platform that analyzes inbound communication tone and provides emotional-regulation guardrails.",
-      impact: "Automatically intercepts aggressive messages and drafts de-escalating, strategic responses to reduce professional friction.",
+      system: "An email triage app that analyzes the tone of incoming messages and helps users respond calmly to stressful emails.",
+      impact: "Engineered the core AI engine that intercepts aggressive language and suggests de-escalating, professional responses.",
       link: "https://blurbox-ftqnwbid1-nobodyy-3s-projects.vercel.app"
     },
     {
       title: "Car Marketplace",
-      system: "A digital showroom ecosystem utilizing AI for advanced vehicle search, recommendation engines, and user-intent matching.",
-      impact: "Structured the backend infrastructure to handle complex inventory databases while ensuring rapid, reliable data serving.",
+      system: "A modern digital car showroom that uses AI to power advanced vehicle searches and personalized recommendations.",
+      impact: "Structured the database and backend infrastructure to quickly serve complex vehicle inventory data to the frontend.",
     },
     {
       title: "Burn-My-Portfolio",
-      system: "Gamified, full-stack consumer application utilizing React, TypeScript, and Supabase wrapped around an aggressive AI financial analytics engine.",
-      impact: "Engineered a high-throughput API layer capable of parallelizing complex financial data requests to generate instantaneous, cynical AI roasts.",
+      system: "A gamified web app that uses an aggressive AI persona to 'roast' users' financial portfolios.",
+      impact: "Built the full-stack architecture to parallelize complex financial data requests, generating instant AI-driven roasts.",
       link: "https://burn-my-portfolio.vercel.app"
     }
   ];
@@ -228,11 +228,11 @@ export default function Index() {
   const OPEN_SOURCE = [
     {
       title: "AI-Slop Linter",
-      system: "Automated static analysis tool utilizing OpenAI API to semantically detect LLM-generated hallucinations and lazy coding anti-patterns."
+      system: "A tool that uses the OpenAI API to automatically detect AI-generated hallucinations and lazy coding patterns in source code."
     },
     {
       title: "Prompt-Improver",
-      system: "Empirical A/B testing and versioning framework for LLM system instructions to mathematically benchmark prompt efficacy."
+      system: "A framework for A/B testing AI prompts, allowing developers to mathematically benchmark which prompt performs better."
     }
   ];
 
@@ -430,25 +430,40 @@ export default function Index() {
           <Timeline />
 
           {/* ── FOOTER ── */}
-          <footer className="relative w-full min-h-[70vh] flex flex-col justify-center items-center text-center bg-[#010101] border-t border-white/5 z-10">
+          <footer className="relative w-full min-h-[50vh] flex flex-col justify-center items-center text-center bg-[#010101] border-t border-white/5 z-10 py-32 px-6">
             <div className="w-16 h-16 border border-white/10 flex items-center justify-center rounded-full mb-8">
               <div className="w-2 h-2 bg-[#b2f5ea] rounded-full animate-pulse" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-8 drop-shadow-lg">
-              System Ready
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg">
+              Let's Connect
             </h2>
-            <button 
-              onClick={handleCopyEmail}
-              className="px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-[#b2f5ea] transition-all duration-300 shadow-[0_0_30px_rgba(178,245,234,0.15)] relative overflow-hidden pointer-events-auto"
-            >
-              {copied ? 'Connection Established (Copied!)' : 'Initialize Connection'}
-            </button>
-            <div className="absolute bottom-8 text-white/30 text-xs font-mono uppercase tracking-widest flex w-full justify-between px-12 pointer-events-auto">
-              <span>© 2026 Aman Hammad</span>
-              <div className="flex gap-6">
-                <a href="https://github.com/amanhammadK" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
-                <a href="https://linkedin.com/in/aman-hammad-509445380" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <p className="text-white/50 font-mono text-sm uppercase tracking-widest mb-16 drop-shadow-md">Open to new opportunities</p>
+            
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 pointer-events-auto">
+              <a href="mailto:amanhammadk@gmail.com" className="group flex flex-col items-center gap-3">
+                <span className="text-white/30 text-[10px] font-mono tracking-widest uppercase group-hover:text-[#b2f5ea] transition-colors">Email</span>
+                <span className="text-white/80 font-sans text-sm md:text-base hover:text-white transition-colors">amanhammadk@gmail.com</span>
+              </a>
+              <div className="hidden md:block w-px h-12 bg-white/10" />
+              <a href="tel:+923264991959" className="group flex flex-col items-center gap-3">
+                <span className="text-white/30 text-[10px] font-mono tracking-widest uppercase group-hover:text-[#b2f5ea] transition-colors">Phone</span>
+                <span className="text-white/80 font-sans text-sm md:text-base hover:text-white transition-colors">+92 326 499 1959</span>
+              </a>
+              <div className="hidden md:block w-px h-12 bg-white/10" />
+              <div className="flex gap-8 items-center">
+                <a href="https://github.com/amanhammadK" target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-3">
+                  <span className="text-white/30 text-[10px] font-mono tracking-widest uppercase group-hover:text-[#b2f5ea] transition-colors">GitHub</span>
+                  <span className="text-white/80 font-sans text-sm md:text-base hover:text-white transition-colors">amanhammadK</span>
+                </a>
+                <a href="https://linkedin.com/in/aman-hammad-509445380" target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-3">
+                  <span className="text-white/30 text-[10px] font-mono tracking-widest uppercase group-hover:text-[#b2f5ea] transition-colors">LinkedIn</span>
+                  <span className="text-white/80 font-sans text-sm md:text-base hover:text-white transition-colors">Connect</span>
+                </a>
               </div>
+            </div>
+
+            <div className="absolute bottom-8 text-white/30 text-xs font-mono uppercase tracking-widest flex w-full justify-center px-12 pointer-events-auto">
+              <span>© 2026 Aman Hammad</span>
             </div>
           </footer>
 
