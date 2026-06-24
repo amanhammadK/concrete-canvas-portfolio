@@ -45,9 +45,9 @@ export default function CinematicNodes({ count = 5000 }) {
     const color = new THREE.Color();
     
     // Theme colors for massive personality
-    const baseColor = new THREE.Color('#b2f5ea'); // Teal
-    const accentColor = new THREE.Color('#9f7aea'); // Purple
-    const darkColor = new THREE.Color('#3182ce'); // Deep Blue
+    const baseColor = new THREE.Color('#b2f5ea'); // Light Teal
+    const accentColor = new THREE.Color('#4fd1c5'); // Medium Cyan/Teal
+    const darkColor = new THREE.Color('#285e61'); // Deep Cyan/Teal
     const hotColor = new THREE.Color('#ffffff'); // Hot White
 
     for (let i = 0; i < count; i++) {

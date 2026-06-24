@@ -233,6 +233,22 @@ export default function Index() {
     {
       title: "Prompt-Improver",
       system: "A framework for A/B testing AI prompts, allowing developers to mathematically benchmark which prompt performs better."
+    },
+    {
+      title: "Code Review Agent",
+      system: "An automated system that uses LLMs to perform intelligent code reviews and identify bugs or anti-patterns before merging."
+    },
+    {
+      title: "Commit Message AI",
+      system: "A developer utility that automatically analyzes Git diffs and generates semantic, conventional commit messages using AI."
+    },
+    {
+      title: "Model Hop",
+      system: "A unified interface to seamlessly route prompts across different LLM providers (OpenAI, Anthropic, DeepSeek) for comparative testing."
+    },
+    {
+      title: "JSON to Schema",
+      system: "A fast utility to automatically generate fully typed JSON schemas and TypeScript interfaces from raw JSON payloads."
     }
   ];
 
