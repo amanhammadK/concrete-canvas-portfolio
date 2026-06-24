@@ -81,13 +81,13 @@ function Timeline() {
   ];
 
   const certifications = [
-    "Artificial Intelligence Diploma (Agentic AI) – PIAIC",
-    "Google AI Professional Specialization – Google",
-    "Agentic AI Professional & Prompt Engineering – PIAIC",
-    "Machine Learning & AI with Python – Harvard",
-    "RAG and Agentic AI Professional – IBM",
-    "Machine Learning – MIT",
-    "CS50: Intro to Computer Science – Harvard"
+    { title: "Artificial Intelligence Diploma (Agentic AI)", issuer: "PIAIC" },
+    { title: "Google AI Professional Specialization", issuer: "Google" },
+    { title: "Agentic AI Professional & Prompt Engineering", issuer: "PIAIC" },
+    { title: "Machine Learning & AI with Python", issuer: "Harvard" },
+    { title: "RAG and Agentic AI Professional", issuer: "IBM" },
+    { title: "Machine Learning", issuer: "MIT" },
+    { title: "CS50: Intro to Computer Science", issuer: "Harvard" }
   ];
 
   return (
@@ -126,20 +126,34 @@ function Timeline() {
           })}
         </div>
 
-        {/* Subtle Certifications List */}
+        {/* Brutalist Certifications Grid */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-2xl mx-auto text-center border-t border-white/10 pt-16"
+          className="max-w-4xl mx-auto mt-24 border-t border-white/10 pt-16"
         >
-          <h4 className="text-white/20 font-mono text-xs tracking-[0.3em] uppercase mb-8 drop-shadow-md">Verified Certifications</h4>
-          <ul className="flex flex-col gap-3 text-white/30 text-sm font-sans drop-shadow-md">
+          <div className="flex flex-col items-center text-center mb-16">
+            <span className="text-white/20 font-mono text-xs tracking-[0.3em] uppercase mb-4 drop-shadow-md">Verified Credentials</span>
+            <h3 className="text-2xl md:text-3xl font-black text-white/90 uppercase tracking-tight">Certifications</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {certifications.map((cert, i) => (
-              <li key={i} className="hover:text-white/60 transition-colors cursor-default">{cert}</li>
+              <div key={i} className="group relative border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] p-6 transition-all duration-300 overflow-hidden cursor-default">
+                <div className="absolute top-0 left-0 w-1 h-0 bg-[#b2f5ea] group-hover:h-full transition-all duration-300" />
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#b2f5ea] font-mono text-[10px] tracking-widest uppercase">
+                    {cert.issuer}
+                  </div>
+                  <div className="text-white/80 font-sans text-sm md:text-base leading-tight font-medium group-hover:text-white transition-colors">
+                    {cert.title}
+                  </div>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </motion.div>
 
       </div>
