@@ -202,8 +202,8 @@ export default function Index() {
     },
     {
       title: "FinanceGPT",
-      system: "A production-ready conversational web application scaffold designed to accelerate development cycles through AI-powered coding assistance and intelligent project generation.",
-      impact: "Eliminates the boilerplate of building enterprise AI apps by providing a fully integrated foundation with pre-configured authentication, state management, and real-time data handling.",
+      system: "A conversational financial analysis platform that orchestrates multiple AI models to perform real-time market research and sentiment tracking.",
+      impact: "Eliminates the need for manual stock research by providing instant, data-driven financial insights through a highly concurrent, resilient architecture.",
       link: "https://financegptwebsite.vercel.app"
     },
     {
