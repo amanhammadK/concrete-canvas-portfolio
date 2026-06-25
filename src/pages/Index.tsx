@@ -196,31 +196,31 @@ export default function Index() {
   const COMMERCIAL_PROJECTS = [
     {
       title: "N×M",
-      system: "A model-agnostic marketplace built with Next.js 16, Supabase, and Stripe where developers publish AI tools and agents discover and transact them.",
-      impact: "Engineered interactive sandboxes and custom Upstash Redis rate limiters, integrating Stripe Connect to automate checkout splits and secure payouts.",
+      system: "A model-agnostic marketplace where developers can publish AI tools, prompts, and workflows, allowing autonomous agents to discover and transact them directly.",
+      impact: "Solves the distribution problem for AI tooling by providing interactive sandboxes, automated payout splits, and custom rate limiting for secure, scalable agent interactions.",
       link: "https://nx-m.vercel.app/"
     },
     {
       title: "FinanceGPT",
-      system: "A production-ready conversational web application scaffold built with Next.js 15, Tailwind 4, and Prisma, optimized for AI-powered development.",
-      impact: "Architected a robust full-stack foundation with NextAuth, Zustand state management, and TanStack integrations for real-time data handling.",
+      system: "A production-ready conversational web application scaffold designed to accelerate development cycles through AI-powered coding assistance and intelligent project generation.",
+      impact: "Eliminates the boilerplate of building enterprise AI apps by providing a fully integrated foundation with pre-configured authentication, state management, and real-time data handling.",
       link: "https://financegptwebsite.vercel.app"
     },
     {
       title: "BlurBox",
-      system: "A privacy-first email triage platform built with React and Vite that analyzes inbound communication tone using OpenAI's GPT-4o-mini.",
-      impact: "Developed a stateless 'Panic Mode' architecture that intercepts aggressive language, applies dynamic visual blurring, and generates clinical safety summaries.",
+      system: "A privacy-first email triage platform that analyzes inbound communication tone to provide emotional-regulation guardrails for users dealing with high-stress inboxes.",
+      impact: "Reduces workplace anxiety through a stateless 'Panic Mode' that intercepts aggressive language, applies dynamic visual blurring, and generates neutral, clinical safety summaries.",
       link: "https://blurbox-ftqnwbid1-nobodyy-3s-projects.vercel.app"
     },
     {
       title: "Car Marketplace (Aramco)",
-      system: "A monorepo automotive platform featuring a Next.js marketing site, marketplace storefront, and admin dashboard, powered by a NestJS and Postgres backend.",
-      impact: "Architected a shared Prisma database schema to seamlessly manage certified 200+ point vehicle inspections and integrated e-commerce auto parts.",
+      system: "A comprehensive digital platform for automotive enthusiasts that unifies a high-end marketing experience, a peer-to-peer car marketplace, and an inventory admin dashboard.",
+      impact: "Streamlines the automotive buying experience by seamlessly managing certified 200+ point vehicle inspections alongside an integrated e-commerce auto parts storefront.",
     },
     {
       title: "Burn-My-Portfolio",
-      system: "A gamified consumer web app built with React, Vite, and Supabase that uses an aggressive hedge fund AI persona to ruthlessly roast financial holdings.",
-      impact: "Integrated a robust Supabase backend with fluid Framer Motion animations to generate instant, cynical financial analytics in a highly responsive UI.",
+      system: "A gamified consumer web app that uses an aggressive hedge fund AI persona to ruthlessly analyze and roast users' financial holdings for entertainment.",
+      impact: "Transforms dry financial analytics into a highly engaging, interactive experience that quickly delivers cynical market insights with fluid, responsive feedback.",
       link: "https://burn-my-portfolio.vercel.app"
     }
   ];
