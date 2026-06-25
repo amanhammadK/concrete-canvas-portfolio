@@ -196,7 +196,7 @@ export default function Index() {
   const COMMERCIAL_PROJECTS = [
     {
       title: "N×M",
-      system: "A model-agnostic marketplace where developers can publish AI tools, prompts, and workflows, allowing autonomous agents to discover and transact them directly.",
+      system: "A business-focused, model-agnostic marketplace for publishing and monetizing AI tools, prompts, and workflows. While heavily utilized by enterprises, it natively supports autonomous agents, developers, and individuals discovering and transacting directly.",
       impact: "Solves the distribution problem for AI tooling by providing interactive sandboxes, automated payout splits, and custom rate limiting for secure, scalable agent interactions.",
       link: "https://nx-m.vercel.app/"
     },
